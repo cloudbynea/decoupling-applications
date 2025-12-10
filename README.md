@@ -27,5 +27,12 @@ Subscribers:
 
 SNS distributes the message to all subscribers, enabling independent scaling and processing.
 
-Architecture diagrams are available in:
+Architecture diagrams are available in the [`architecture/`](./architecture) folder:
+
+- **Decoupled Architecture (SNS Fan-Out)**  
+  ![Decoupled Architecture](./architecture/decoupled-architecture-diagram.png)
+
+- **Dead-Letter Queue (DLQ) Redrive Flow**  
+  ![DLQ Redrive](./architecture/dlq-redrive-diagram.png)
+
 
