@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__owner_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "901523491231"
+      },
+      "Action": "SQS:*",
+      "Resource": "arn:aws:sqs:us-east-1:901523491231:ImageQueue"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "sns.amazonaws.com"
+      },
+      "Action": "sqs:SendMessage",
+      "Resource": "arn:aws:sqs:us-east-1:901523491231:ImageQueue",
+      "Condition": {
+        "ArnEquals": {
+          "aws:SourceArn": "arn:aws:sns:us-east-1:901523491231:ImageNotification"
+        }
+      }
+    }
+  ]
+}
